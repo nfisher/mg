@@ -1,4 +1,4 @@
-# ![Magnesium Electron Shell](mg-electrons.png) Mg
+# ![Magnesium Electron Shell](mg-electrons.png)
 
 Mg is the periodic symbol for Magnesium an element that is often found in tracer rounds. This project is derived from the details provided in the Google Dapper paper.
 
