@@ -1,12 +1,16 @@
 # Mg
 
-Mg is the periodic symbol for Magnesium an element that is often found in tracer rounds. This project is modeled after Googles Dapper.
+Mg is the periodic symbol for Magnesium an element that is often found in tracer rounds. This project is derived from the details provided in the Google Dapper paper.
 
-The primary goals for the project are:
+The primary goals for this project are:
 
   - minimise external operational dependencies.
-  - as often as possible provide simple libraries that can easily be integrated into existing projects.
-  - maximise the number of languages.
+  - provide simple libraries that can easily be integrated into existing projects.
+  - maximise the number of supported languages.
+
+## Architecture
+
+!Multi-Node-Deployment.png!
 
 ## Binary Log Format
 
@@ -27,7 +31,11 @@ This format is more compact than Zipkins spanning a mere 128bits in binary form.
 
 ### HTTP Header
 
-The HTTP header X-Mg-Trace is all that should need to be sent on the wire.
+The HTTP header X-Mg-Trace has 3 potential states:
+
+  - "-" indicating do not trace.
+  - "P" indicating persist the trace independent of sampling.
+  - "${Base64}" indicating associate this request with this trace span.
 
 Example:
 ```
@@ -36,6 +44,12 @@ X-Mg-Trace: -
 
 // force persisting of this trace (only valid for edge nodes).
 X-Mg-Trace: P
+// timestamp
+X-Mg-Timestamp: 1444542668000
+// Associated User Id
+X-Mg-Trace-Uid: 12345
+// base64(sha256(uid+token+timestamp))
+X-Mg-Trace-Sig: ZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NQ==
 
 // packed base64(TraceId+SpanParentId+SpanId)
 X-Mg-Trace: MDEyMzQ1Njc4OUFCQ0RFMA==
