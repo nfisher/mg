@@ -4,4 +4,4 @@ jdk:
   - oraclejdk8
 
 before_script:
-  - mvn version:set -DnewVersion="1.0.${TRAVIS_BUILD_NUMBER}-${TRAVIS_COMMIT}"
+  - mvn versions:set -DnewVersion="1.0.${TRAVIS_BUILD_NUMBER}-${TRAVIS_COMMIT}"
