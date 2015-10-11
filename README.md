@@ -1,5 +1,7 @@
 # ![Magnesium Electron Shell](mg-electrons.png)
 
+[![Build Status](https://travis-ci.org/nfisher/mg.svg?branch=master)](https://travis-ci.org/nfisher/mg)
+
 Mg is the periodic symbol for Magnesium an element that is often found in tracer rounds. This project is derived from the details provided in the Google Dapper paper.
 
 The primary goals for this project are:
