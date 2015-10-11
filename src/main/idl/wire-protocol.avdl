@@ -1,0 +1,9 @@
+@namespace("com.github.nfisher.mg.protocol")
+
+protocol WireProtocol {
+  record Trace {
+    long Id;
+    int  SpanParentId;
+    int  SpanId;
+  }
+}
