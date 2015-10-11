@@ -1,4 +1,4 @@
-# Mg
+# ![Magnesium Electron Shell](mg-electrons.png) Mg
 
 Mg is the periodic symbol for Magnesium an element that is often found in tracer rounds. This project is derived from the details provided in the Google Dapper paper.
 
@@ -10,7 +10,7 @@ The primary goals for this project are:
 
 ## Architecture
 
-!Multi-Node-Deployment.png!
+![Multi-node deployment diagram](Multi-Node-Deployment.png)
 
 ## Binary Log Format
 
