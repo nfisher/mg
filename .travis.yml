@@ -2,3 +2,6 @@ language: java
 sudo: false
 jdk:
   - oraclejdk8
+
+before_script:
+  - mvn version:set -DnewVersion="1.0.${TRAVIS_BUILD_NUMBER}-${TRAVIS_COMMIT}"
